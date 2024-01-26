@@ -7,6 +7,8 @@ return {
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
   { import = "astrocommunity.note-taking.neorg" },
+  { import = "astrocommunity.pack.ansible" },
+  { import = "astrocommunity.pack.yaml" },
   {
     "neorg",
     opts = {
