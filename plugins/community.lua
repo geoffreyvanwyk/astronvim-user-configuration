@@ -9,6 +9,7 @@ return {
   { import = "astrocommunity.note-taking.neorg" },
   { import = "astrocommunity.pack.ansible" },
   { import = "astrocommunity.pack.yaml" },
+  { import = "astrocommunity.bars-and-lines.heirline-vscode-winbar" },
   {
     "neorg",
     opts = {
