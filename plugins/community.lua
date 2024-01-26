@@ -6,4 +6,20 @@ return {
 
   -- { import = "astrocommunity.colorscheme.catppuccin" },
   -- { import = "astrocommunity.completion.copilot-lua-cmp" },
+  { import = "astrocommunity.note-taking.neorg" },
+  {
+    "neorg",
+    opts = {
+      load = {
+        ["core.dirman"] = {
+          config = {
+            workspaces = {
+              notes = "~/Notes/"
+            },
+            default_workspace = "notes",
+          }
+        }
+      }
+    }
+  }
 }
