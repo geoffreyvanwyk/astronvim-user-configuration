@@ -17,6 +17,26 @@ return {
     --   function() require("astronvim.utils.buffer").nav(-(vim.v.count > 0 and vim.v.count or 1)) end,
     --   desc = "Previous buffer",
     -- },
+    
+    -- show Dashboard when last buffer has been closed, instead of the ugly "Untitled" buffer
+    ["<leader>c"] = {
+      function()
+        local bufs = vim.fn.getbufinfo { buflisted = true }
+        require("astronvim.utils.buffer").close(0)
+        -- show Dashboard when last buffer has been closed, instead of the ugly "Untitled" buffer
+        if require("astronvim.utils").is_available "alpha-nvim" and not bufs[2] then require("alpha").start(true) end
+      end,
+      desc = "Close buffer",
+    },
+
+    ["<leader>bC"] = { 
+      function() 
+        require("astronvim.utils.buffer").close_all() 
+        -- show Dashboard when all buffers have been closed; instead of the ugly "Untitled" buffer 
+        if require("astronvim.utils").is_available "alpha-nvim" then require("alpha").start(true) end
+      end, 
+      desc = "Close all buffers" ,
+    },
 
     -- mappings seen under group name "Buffer"
     ["<leader>bD"] = {
